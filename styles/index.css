@@ -92,6 +92,7 @@ nav a:hover {
 }
 .showcase .contain > h1 {
   font-size: 55px;
+  text-align: center;
 }
 .showcase .contain > p {
   font-size: 23px;
@@ -171,4 +172,38 @@ footer {
 
 footer a :hover {
   color: #28a745;
+}
+
+/* media queries */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+  nav a {
+    padding: 10px 10px;
+    margin: 0 3px;
+  }
+
+  .flex-item {
+    flex-direction: column;
+  }
+
+  .flex-columns .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .flex-grid .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .flex-grid .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
