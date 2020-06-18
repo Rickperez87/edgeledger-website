@@ -9,13 +9,14 @@
       integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./styles/lightbox.min.css">
     <link rel="stylesheet" href="./styles/utilities.css" />
     <link rel="stylesheet" href="./styles/index.css" />
     <title>Edgeledger</title>
   </head>
   <body>
     <header class='header-main'>
-      <nav>
+      <nav id='navbar' class='navbar top'>
         <h1 class="heading-l">
           <span class="text-primary"><i class="fas fa-book-open"></i> Edge</span
           >Ledger
@@ -121,20 +122,38 @@
           </header>
           <div class="row">
               <div class="column">
-                  <img src="./image_resources/cases/cases1.jpg" alt="">
-                  <img src="./image_resources/cases/cases2.jpg" alt="">
+                <a href="./image_resources/cases/cases1.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+                iusto.'>
+                <img src="./image_resources/cases/cases1.jpg" alt="">
+              
+              </a>
+              <a href="./image_resources/cases/cases2.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+              iusto.'>
+                  <img src="./image_resources/cases/cases2.jpg" alt=""></a>
               </div>
               <div class="column">
-                  <img src="./image_resources/cases/cases3.jpg" alt="">
-                  <img src="./image_resources/cases/cases4.jpg" alt="">
+                <a href="./image_resources/cases/cases3.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+                iusto.'>
+                  <img src="./image_resources/cases/cases3.jpg" alt=""> </a>
+                  <a href="./image_resources/cases/cases4.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+                  iusto.'>
+                  <img src="./image_resources/cases/cases4.jpg" alt=""></a>
               </div>
               <div class="column">
-                  <img src="./image_resources/cases/cases5.jpg" alt="">
-                  <img src="./image_resources/cases/cases6.jpg" alt="">
+                <a href="./image_resources/cases/cases5.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+                iusto.'>
+                  <img src="./image_resources/cases/cases5.jpg" alt=""></a>
+                  <a href="./image_resources/cases/cases6.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+                  iusto.'>
+                  <img src="./image_resources/cases/cases6.jpg" alt=""></a>
               </div>
               <div class="column">
-                  <img src="./image_resources/cases/cases7.jpg" alt="">
-                  <img src="./image_resources/cases/cases8.jpg" alt="">
+                <a href="./image_resources/cases/cases7.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+                iusto.'>
+                  <img src="./image_resources/cases/cases7.jpg" alt=""></a>
+                  <a href="./image_resources/cases/cases8.jpg" data-lightbox='cases' data-title='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
+                  iusto.'>
+                  <img src="./image_resources/cases/cases8.jpg" alt=""></a>
               </div>
           </div> 
       </section>
@@ -216,5 +235,43 @@
     <a href="#"><i class='fab fa-linkedin fa-2x'></i></a>
     
 </div> <p>Copyright &copy; 2020 - EdgeLedger</p>    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="./js/lightbox.min.js"></script>
+<script>
+  
+const navbar = document.getElementById('navbar');
+let scrolled=false;
+window.onscroll=function(){
+  if (window.pageYOffset > 100) {
+    navbar.classList.remove('top')
+    if(!scrolled){
+      navbar.style.transform='translateY(-70px)';
+    }
+    setTimeout(function(){
+      navbar.style.transform='translateY(0px)'
+      scrolled=true;
+    },200);
+  }
+  else{
+    navbar.classList.add('top')
+    scrolled=false;
+  }
+};
+
+// smooth scrolling
+$('#navbar a, .btn').on('click', function(e){
+  if (this.hash !==''){
+    e.preventDefault();
+
+    const hash = this.hash;
+    $('html, body').animate(
+{
+  scrollTop:$(hash).offset().top-100,
+},800
+
+    );
+  }
+});
+</script>
   </body>
 </html>
