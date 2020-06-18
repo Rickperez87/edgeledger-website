@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
 /* reset */
 * {
   margin: 0;
@@ -11,6 +12,7 @@ body {
   background: #fff;
   color: #333;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -33,9 +35,9 @@ img {
 /* header */
 .header-main {
   position: relative;
-  background: url("/image_resources/home/showcase.jpg") no-repeat center
+  background: url("/image_resources/home/blog.jpg") no-repeat center
     center/cover;
-  height: 100vh;
+  height: 300px;
 }
 .header-main:before {
   content: "";
@@ -76,68 +78,43 @@ nav a:hover {
   display: flex;
 }
 
-/* showcase */
-.showcase {
-  height: calc(100vh - 70px);
+/* blog header */
+.blog {
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.showcase .contain {
+.blog img {
+  width: 100%;
+}
+.blog .contain {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
 }
-.showcase .contain > h1 {
+.blog .contain > h1 {
   font-size: 55px;
   text-align: center;
 }
-.showcase .contain > p {
-  font-size: 23px;
-  max-width: 600px;
-  margin: 20px 0 30px;
-  display: block;
+
+/* blog-1 */
+.blog-1 .column-2 > h2 {
+  font-weight: 0;
 }
-/* icon */
-.flex-item div > i {
-  background: #28a745;
-  padding: 1rem;
-  border-radius: 50%;
-  color: white;
-  margin-bottom: 15px;
-}
-.flex-item div > h3 {
+.boldUser {
   font-weight: bold;
-  margin-bottom: 15px;
 }
-/* about-icons */
-.about-icons {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 30px;
-}
-/* about-info */
 
-/* business cases */
-
-.cases img:hover {
-  opacity: 0.7;
-}
-/* blog */
-#blog > .row {
+/* blog-2 */
+.blog-2 > .row {
   display: flex;
   flex-direction: row-reverse;
 }
-/* team */
-#team {
-  padding: 30px 10px;
-}
-#team img {
-  border-radius: 50%;
-}
-/* contact */
+
+/* blog-3 */
 
 #contact input {
   margin: 10px;
